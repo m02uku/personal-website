@@ -123,6 +123,7 @@ main {
 .tab-content {
     display: none;
     padding: 2rem;
+    text-align: center;
 }
 
 .tab-content.active {
@@ -147,8 +148,9 @@ main {
 .project-grid,
 .research-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr); /* 2列に固定 */
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .project-card,
@@ -159,6 +161,7 @@ main {
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     box-shadow: 0 4px 15px var(--shadow-color);
+    text-align: center;
 }
 
 .project-card:hover,
@@ -521,8 +524,7 @@ footer {
 
     .project-grid,
     .research-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: 1fr; /* スマートフォンでは1列に */
     }
 
     .project-card,
