@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ギャラリーのページネーション機能
     function initializeGalleryPagination() {
-        const itemsPerPage = 10;
+        const itemsPerPage = 12; // 1ページあたり12枚に変更
         let currentPage = 1;
         const galleryItems = document.querySelectorAll('.gallery-item');
         const totalPages = Math.ceil(galleryItems.length / itemsPerPage);
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updatePageInfo();
     }
 
-    // ギャラリーモーダル機能
+    // ギャリーモーダル機能
     function initializeGallery() {
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');

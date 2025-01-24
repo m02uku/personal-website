@@ -13,7 +13,7 @@
 }
 
 body {
-    font-family: 'Kiwi Maru', serif;
+    font-family: "Kiwi Maru", serif;
     background-color: white;
     color: var(--text-color);
     line-height: 1.6;
@@ -87,7 +87,7 @@ nav {
 }
 
 .tab-button {
-    font-family: 'Kiwi Maru', serif;
+    font-family: "Kiwi Maru", serif;
     padding: 1rem 2rem;
     border: none;
     background-color: white;
@@ -122,11 +122,17 @@ main {
 
 .tab-content {
     display: none;
-    animation: popIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 2rem;
 }
 
 .tab-content.active {
     display: block;
+}
+
+.tab-content h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
 }
 
 .content-box {
@@ -309,7 +315,7 @@ footer {
 /* ギャラリースタイル */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 4列に変更 */
     gap: 1.5rem;
     padding: 1rem;
 }
@@ -341,6 +347,27 @@ footer {
 
 .gallery-item:hover img {
     transform: scale(1.1) rotate(2deg);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* タブレットサイズでは3列 */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 小さいタブレットでは2列 */
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(1, 1fr); /* スマートフォンでは1列 */
+        gap: 0.8rem;
+    }
 }
 
 /* ページネーション */
@@ -433,7 +460,8 @@ footer {
 }
 
 @keyframes wingFloat {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0) rotate(-5deg);
     }
     50% {
@@ -442,7 +470,8 @@ footer {
 }
 
 @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
         transform: translateY(0);
     }
     50% {
@@ -477,19 +506,19 @@ footer {
     .tab-container {
         flex-wrap: wrap;
     }
-    
+
     .tab-button {
         flex: 1 1 calc(50% - 1.5rem);
     }
-    
+
     h1 {
         font-size: 2.5rem;
     }
-    
+
     .subtitle {
         font-size: 1.2rem;
     }
-    
+
     .project-grid,
     .research-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -511,7 +540,7 @@ footer {
     .tab-button {
         flex: 1 1 100%;
     }
-    
+
     .content-box {
         padding: 1.5rem;
     }
@@ -524,7 +553,7 @@ footer {
         padding: 1rem 1.5rem;
         word-break: break-all;
     }
-    
+
     .project-card h3,
     .research-card h3 {
         font-size: 1.2rem;
